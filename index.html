@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./styles/style.css">
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+
+</head>
+<body>
+  <header>
+    <h1>SPLI<br>
+      TTER
+    </h1>
+  </header>
+ <main>
+      <form action="">
+        <div clasa="container">
+          <div class="input">
+            <label for="bill">Bill</label>
+          <input type="number" id="bill" placeholder="0" dir="rtl"/>
+          </div>
+          <div class="select">
+            <span>Select Tip %</span>
+            <div class="options">
+              <input type="radio" name="option" id="5"/>
+              <label for="5">5%</label>
+              <input type="radio" name="option" id="10"/>
+              <label for="10">10%</label>
+              <input type="radio" name="option" id="15" />
+              <label for="15">15%</label>
+              <input type="radio" name="option" id="25"/>
+              <label for="25">25%</label>
+              <input type="radio" name="option" id="50"/>
+              <label for="50">50%</label>
+              <input type="number" id="custom" value="Custom" placeholder="Custom" dir="rtl"/>
+            </div>
+          </div>
+          <div class="input">
+            <label for="number-of-people">Number of People</label>
+            <input type="number" id="number-of-people" placeholder="0" dir="rtl"/>
+          </div>
+        </div>
+        <div class="result">
+          <div class="show-result">
+              <p>Tip Amount <span>/ person</span></p>
+              <h2>$0.00</h2>
+          </div>
+          <div class="show-result">
+             <p>Total <span>/ person</span></p>
+             <h2>$0.00</h2>
+          </div>
+          <div class="button">
+            <input type="reset" value="RESET"/>
+          </div>
+          </div>
+      </form>
+ </main>
+  <script></script>
+</body>
+</html>

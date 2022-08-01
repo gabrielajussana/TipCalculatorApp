@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+:root{
+    --background: hsl(172, 67%, 90%);
+    --strong-cyan: hsl(172, 67%, 40%);
+    --very-dark-cyan: hsl(183, 100%, 15%);
+    --dark-grayish-cyan: hsl(186, 14%, 43%);
+    --grayish-cyan: hsl(184, 14%, 56%);
+    --light-grayish-cyan: hsl(185, 41%, 84%);
+    --very-light-grayish-cyan: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 3rem;
+
+    background-color: var(--background);
+    font-family: 'Space Mono', sans-serif;
+    font-weight: 700;
+}
+
+header{
+    color: var(--dark-grayish-cyan);
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+main{
+    display: flex;
+
+    background-color: var(--white);
+    border-radius: 1rem;
+    box-shadow: -1px 7px 20px 10px rgba(0,60,41,0.2);
+
+    padding: 2rem;
+}
+
+form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    column-gap: 1rem;
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+ input[type=number]{ 
+    -moz-appearance: textfield;
+    appearance: textfield;
+    border: none;
+    outline: none;
+    background-color: var(--very-light-grayish-cyan);
+    color: var(--grayish-cyan);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-family: "Space Mono", sans-serif;
+    font-size: 20px;
+ }
+
+ .input input[type=number]::placeholder{
+    display: flex;
+    align-items: left;
+    color: var(--grayish-cyan);;
+ }
+
+input[type="number"]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+
+form .options{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+
+    margin-top: 10px;
+}
+
+form .options input{
+    width: 100px;
+    height: 30px;
+}
+
+form .options input[type="radio"]{
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+
+form .options label{
+    display: flex;
+    justify-content: center;
+
+    background-color: var(--very-dark-cyan);
+    color: var(--white);
+    
+    padding: 0.5rem 0;
+    font-size: 20px;
+   
+    border: none;
+    border-radius: 0.2rem;
+}
+
+form .options input[type="radio"]:hover + label,
+form .options input[type="radio"]:checked+ label{
+    color: var(--very-dark-cyan);
+    background: var(--strong-cyan);
+    cursor: pointer;
+}
+
+form .options input[type="number"]{
+    background-color: var(--very-light-grayish-cyan);
+    border: none;
+    outline: none;
+    border-radius: 0.2rem;
+}
+
+form .options input[type="number"]::placeholder{
+    text-align: center;
+    font-family: 'Space Mono', sans-serif;
+    font-size: 20px;
+}
+
+form .options input[type="number"]:hover
+{
+    color: var(--very-dark-cyan);
+    font-weight: 700;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+.input label, 
+.select span{
+    color: var(--grayish-cyan);
+    font-size: 12px;
+}
+
+.result{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 2fr;
+
+    background-color: var(--very-dark-cyan);
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
+
+.show-result{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.show-result p{
+    display: flex;
+    flex-direction: column;
+
+    color: var(--white);
+    font-size: 1rem;
+}
+
+.show-result p span{
+    color: var(--light-grayish-cyan);
+    font-size: .8rem;
+}
+
+.show-result h2{
+    color: var(--strong-cyan);
+}
+
+.button{
+   
+}
+
+input[type="reset"]{
+    width: 100%;
+    height: 40px;
+    margin-top: 80px;
+
+    background-color: hsl(172, 67%, 30%);
+    color: var(--very-dark-cyan);
+
+    font-weight: 700;
+
+    padding: .5rem 0;
+    border: none;
+    border-radius: .5rem;
+}
+
+input[type="reset"]:hover{
+    cursor: pointer;
+    background-color: var(--strong-cyan);
+}
+
+@media only screen and (max-width: 375px){
+    main{
+        margin-top: 300px;
+        width: 100%;
+        justify-content: center;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+    }
+
+    form{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        row-gap: 1rem;
+    }
+
+    form .options{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        margin: 2rem 0;
+    }
+
+    .result{
+        width: 100%;
+        height: 200px;
+    }
+
+}
