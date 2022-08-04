@@ -3,7 +3,7 @@ const numberOfPeople = document.querySelector('#number-of-people');
 const custom = document.querySelector('#custom');
 const tipAmount = document.querySelector('#tip-amount');
 const totalPerPerson = document.querySelector('#total');
-const buttons = document.querySelectorAll('.options');
+const buttons = document.querySelectorAll('.options > label');
 const zero = document.querySelector('.cant-be-zero'); 
 const form = document.querySelector('form');
 
@@ -13,11 +13,12 @@ buttons.forEach((button)=>{
         tipvalue = tipvalue.substr(0, tipvalue.length - 1);
         console.log(tipvalue);
         
-        if(bill.value === "" ) return;
-        if(numberOfPeople.value === "" ){
-          zero.classList.remove('hide');
-      }else{
-          zero.classList.add('hide')
+        if(bill.value === "" ){
+          alert("Please First Add Bill");
+          return;
+        }
+        if(numberOfPeople.value === ""){
+          numberOfPeople.value = 1;
       }
         
         calculateTip(
@@ -31,16 +32,13 @@ buttons.forEach((button)=>{
 
 custom.addEventListener('input', (e)=>{
     if (bill.value === "") {
-        alert("Please First Add Bill Amount");
-        resetEverything();
+        alert("Please First Add Bill");
         return;
       }
       
-      if (numberOfPeople.value === "" ){
-        zero.classList.remove('hide');
-      } else{
-        zero.classList.add('hide');
-      }
+      if(numberOfPeople.value === ""){
+        numberOfPeople.value = 1;
+    }
       
       calculateTip(
         parseFloat(bill.value),
