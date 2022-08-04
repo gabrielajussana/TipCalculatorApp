@@ -160,7 +160,7 @@ form .options input[type="number"]::placeholder{
     font-size: 20px;
 }
 
-span{
+.first-container span{
     color: var(--grayish-cyan);
     font-size: 12px;
 }
@@ -172,11 +172,6 @@ span{
 .cant-be-zero{
     color: red;
 }
-
-.input-red{
-    border: 2px solid red;
-}
-
 
 .second-container{
     display: grid;
@@ -217,12 +212,15 @@ input[type="reset"]{
     height: 40px;
     margin-top: 80px;
 
-    background-color: hsl(172, 67%, 30%);
-    color: var(--dark-grayish-cyan);
-
+    background-color: var(--strong-cyan);
+    color: var(--very-dark-cyan);
+    
+    letter-spacing: 3px;
+    font-size: 20px;
     padding: .5rem 0;
     border: none;
     border-radius: .5rem;
+    opacity: 0.8;
     transition: .3s ease-in-out;
 }
 
@@ -230,6 +228,7 @@ input[type="reset"]:hover{
     cursor: pointer;
     background-color: var(--strong-cyan);
     color: var(--very-dark-cyan);
+    opacity: 1;
 }
 
 @media only screen and (max-width: 376px){
