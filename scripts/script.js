@@ -11,7 +11,7 @@ buttons.forEach((button)=>{
     button.addEventListener('click', (e)=>{
         let tipvalue = e.target.innerHTML;
         tipvalue = tipvalue.substr(0, tipvalue.length - 1);
-        //console.log(tipvalue);
+        console.log(tipvalue);
         
         if(bill.value === "" ) return;
         if(numberOfPeople.value === "" ){
@@ -21,9 +21,9 @@ buttons.forEach((button)=>{
       }
         
         calculateTip(
-            bill.value,
-            tipvalue,
-            numberOfPeople.value
+            parseFloat(bill.value),
+            parseFloat(tipvalue),
+            parseInt(numberOfPeople.value)
         );
         
     });
@@ -37,7 +37,6 @@ custom.addEventListener('input', (e)=>{
       }
       
       if (numberOfPeople.value === "" ){
-        numberOfPeople.classList.add('input-red');
         zero.classList.remove('hide');
       } else{
         zero.classList.add('hide');
@@ -52,9 +51,6 @@ custom.addEventListener('input', (e)=>{
 
 
 function calculateTip(bill, percentage, numberOfPeople ){
-    bill = parseFloat(bill);
-    percentage = parseFloat(percentage);
-    numberOfPeople = parseInt(numberOfPeople);
     let billTip = (bill * (percentage / 100));
     let tip = billTip / numberOfPeople;
     let total = (bill + billTip) / numberOfPeople;
@@ -64,11 +60,11 @@ function calculateTip(bill, percentage, numberOfPeople ){
     console.log(tip);
     console.log(total);
 
-    tipAmount.textContent = tip;
-    totalPerPerson.textContent =  total;
+    tipAmount.innerText = tip;
+    totalPerPerson.innerText =  total;
 }
 
 form.addEventListener('reset', ()=>{
-  tipAmount.innerText = `R$ 0.00`;
-  totalPerPerson.innerText = `R$ 0.00`;
+  tipAmount.innerText = `0.00`;
+  totalPerPerson.innerText = `0.00`;
 })
